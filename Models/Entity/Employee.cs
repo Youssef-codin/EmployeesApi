@@ -12,6 +12,4 @@ public partial class Employee
     public string Department { get; set; } = null!;
 
     public string? Manager { get; set; }
-
-    public virtual Department DepartmentNavigation { get; set; } = null!;
 }

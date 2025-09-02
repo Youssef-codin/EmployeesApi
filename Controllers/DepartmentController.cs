@@ -1,9 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using EmployeeApi.Models.Entity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EmployeeApi.Controllers;
 
+[Authorize]
 [Route("api/[controller]")]
 [ApiController]
 public class DepartmentController : ControllerBase
@@ -15,24 +17,12 @@ public class DepartmentController : ControllerBase
         this.c = dbContext;
     }
 
+    [AllowAnonymous]
     [HttpGet]
-    public IActionResult getAllEmps()
+    public IActionResult getAllDeps()
     {
-        var emps = c.Employees.ToList();
-        return Ok(emps);
+        var deps = c.Departments.ToList();
+        return Ok(deps);
     }
 
-    [HttpPut]
-    public IActionResult add1KToEachEmp()
-    {
-        var emps = c.Employees.ToList();
-
-        foreach (Employee emp in emps)
-        {
-            emp.Salary += 1000;
-        }
-
-        c.SaveChanges();
-        return Ok();
-    }
 }

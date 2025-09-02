@@ -56,11 +56,6 @@ public partial class McvContext : DbContext
             entity.Property(e => e.Salary)
                 .HasColumnType("decimal(18, 0)")
                 .HasColumnName("salary");
-
-            entity.HasOne(d => d.DepartmentNavigation).WithMany(p => p.Employees)
-                .HasForeignKey(d => d.Department)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__employees__depar__5441852A");
         });
 
         OnModelCreatingPartial(modelBuilder);
