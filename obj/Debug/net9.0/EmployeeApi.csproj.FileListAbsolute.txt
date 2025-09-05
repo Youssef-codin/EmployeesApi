@@ -20,6 +20,7 @@
 /home/joe-arch/Projects/C#/EmployeeApi/bin/Debug/net9.0/Azure.Core.dll
 /home/joe-arch/Projects/C#/EmployeeApi/bin/Debug/net9.0/Azure.Identity.dll
 /home/joe-arch/Projects/C#/EmployeeApi/bin/Debug/net9.0/Humanizer.dll
+/home/joe-arch/Projects/C#/EmployeeApi/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /home/joe-arch/Projects/C#/EmployeeApi/bin/Debug/net9.0/Microsoft.AspNetCore.Cryptography.Internal.dll
 /home/joe-arch/Projects/C#/EmployeeApi/bin/Debug/net9.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 /home/joe-arch/Projects/C#/EmployeeApi/bin/Debug/net9.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -346,4 +347,3 @@
 /home/joe-arch/Projects/C#/EmployeeApi/obj/Debug/net9.0/EmployeeApi.pdb
 /home/joe-arch/Projects/C#/EmployeeApi/obj/Debug/net9.0/EmployeeApi.genruntimeconfig.cache
 /home/joe-arch/Projects/C#/EmployeeApi/obj/Debug/net9.0/ref/EmployeeApi.dll
-/home/joe-arch/Projects/C#/EmployeeApi/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll

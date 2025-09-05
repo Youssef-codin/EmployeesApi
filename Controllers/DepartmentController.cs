@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace EmployeeApi.Controllers;
 
-[Authorize]
+[Authorize(Roles = "Admin,Employee")]
 [Route("api/[controller]")]
 [ApiController]
 public class DepartmentController : ControllerBase
@@ -17,7 +17,6 @@ public class DepartmentController : ControllerBase
         this.c = dbContext;
     }
 
-    [AllowAnonymous]
     [HttpGet]
     public IActionResult getAllDeps()
     {
@@ -25,4 +24,28 @@ public class DepartmentController : ControllerBase
         return Ok(deps);
     }
 
+    [Authorize(Roles = "Admin")]
+    [HttpGet("secret")]
+    public IActionResult getSecretDeps()
+    {
+        var deps = c.Departments.ToList();
+        return Ok(deps);
+    }
+
+    [HttpGet("HighestDeptSalary")]
+    public IActionResult HighestDeptSalary()
+    {
+        string? topDept =
+            (from emp in c.Employees
+             group emp by emp.Department into g
+             orderby g.Sum(emp => emp.Salary) descending
+             select g.Key).FirstOrDefault();
+
+        if (string.IsNullOrWhiteSpace(topDept))
+        {
+            return NotFound();
+        }
+
+        return Ok(topDept);
+    }
 }

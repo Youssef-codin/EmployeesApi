@@ -23,7 +23,6 @@ builder.Services.AddAuthentication(x =>
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true
     };
-
 });
 
 builder.Services.AddAuthorization();
